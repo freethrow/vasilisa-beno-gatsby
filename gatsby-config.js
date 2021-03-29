@@ -14,9 +14,9 @@ module.exports = {
     "gatsby-plugin-image",
 
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+  
     "gatsby-transformer-remark",
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-sharp",
   {
     resolve: `gatsby-transformer-remark`,
     options: {
