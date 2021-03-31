@@ -25,7 +25,7 @@ const GalleryTemplate = ({ data:{
       return image.gatsbyImageData.images.fallback.src
     })
 
-    console.table(pics)
+
 
 
 
@@ -50,11 +50,6 @@ const GalleryTemplate = ({ data:{
           setIndex((index + 1) % pics.length)
         }
   />}
-
-        <button type="button" onClick={() => setOpen(true)}>
-          Open Lightbox
-        </button>
-
 
 
 
