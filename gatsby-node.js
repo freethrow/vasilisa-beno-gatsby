@@ -14,7 +14,7 @@ exports.createPages = async ({graphql, actions})=>{
     result.data.galleries.nodes.forEach((gallery)=>{
         createPage({
             path:`/galleries/${gallery.slug}`,
-            component:path.resolve(`src/templates/Gallery-template.js`),
+            component:path.resolve(`src/templates/GalleryTemplate.js`),
             context:{
                 slug:gallery.slug,
             }
