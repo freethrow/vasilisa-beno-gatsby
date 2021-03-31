@@ -56,7 +56,7 @@ module.exports = {
       options: {
         fonts: [
           `limelight`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `Montserrat:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
       }

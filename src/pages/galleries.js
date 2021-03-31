@@ -29,10 +29,12 @@ const galleries = ({data}) => {
                         className="text-red-800 hover:text-red-600"
                     ><Link to={`/galleries/${gallery.slug}`}>{gallery.title}</Link></h2>
                    
+                   <Link to={`/galleries/${gallery.slug}`}>
                     <GatsbyImage
                         image={image}
                         className="p-8"
                          />
+                    </Link>
                      <p>{gallery.description.internal.content}</p>
                   </div>
               )
@@ -45,21 +47,22 @@ const galleries = ({data}) => {
 }
 export const query = graphql`
   {
-    allContentfulGallery {
-      nodes {
-        slug
-        cover {
-          gatsbyImageData(height: 720)
+    allContentfulGallery(sort: {fields: priority, order: DESC}) {
+        nodes {
+          priority
+          slug
+          cover {
+            gatsbyImageData(height: 300)
+          }
+          title
           
-        }
-        title
-        description {
-          internal {
-            content
+          description {
+            internal {
+              content
+            }
           }
         }
       }
-    }
   }
 `
 export default galleries

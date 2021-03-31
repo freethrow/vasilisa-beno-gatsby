@@ -1,10 +1,14 @@
-import React from "react"
+import React, {useState} from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/Layout'
 import {Link} from 'gatsby'
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const galleryTemplate = ({ data:{
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+
+
+const GalleryTemplate = ({ data:{
     gallery:{
         title,
         description,
@@ -12,28 +16,78 @@ const galleryTemplate = ({ data:{
     }
 } }) => {
 
+    const [isOpen, setOpen] = useState(false);
+    const [index, setIndex] = useState(0);
+
+   
+
+    const pics=images.map((image)=>{
+      return image.gatsbyImageData.images.fallback.src
+    })
+
+    console.table(pics)
+
+
+
     return (
     <Layout>
-        <Link to="/galleries">back to galleries</Link>
+        <section 
+        className="container mx-auto text-gray-500 font-thin">
+      
         <h1>{title}</h1>
-        <div>{description.internal.content}</div>
+        <div className="my-12">{description.internal.content}</div>
 
-        {images.map((image)=>{
+    { isOpen &&      
+    <Lightbox
+        mainSrc={pics[index]}
+        nextSrc={pics[(index + 1) % pics.length]}
+        prevSrc={pics[(index + pics.length - 1) % pics.length]}
+        onCloseRequest={() => setOpen(false)}
+        onMovePrevRequest={() =>
+          setIndex((index + pics.length - 1) % pics.length)
+        }
+        onMoveNextRequest={() =>
+          setIndex((index + 1) % pics.length)
+        }
+  />}
+
+        <button type="button" onClick={() => setOpen(true)}>
+          Open Lightbox
+        </button>
+
+
+
+
+
+        <div className="md:grid md:grid-cols-3 md:gap-12 mx-auto text-center">
+        {images.map((image, index)=>{
             
+       
              
 
               return (
                   <div 
                     key={image.id}
-                    className="p-4">
+                    className="flex flex-col items-center justify-start ">
                         <GatsbyImage
+                            onClick={() => {
+                              setOpen(true)
+                              setIndex(index)
+                            }}
                             image={image.gatsbyImageData}
-                            className="p-8 border-2 border-black"
+                            className="transition duration-500 transform hover:scale-105 
+                            
+                             border-solid border-8"
+                            
+                            
                         />
+
+                       
                   </div>
               )
           })}
-       
+        </div>
+        </section>
     </Layout>)
 }
 
@@ -45,11 +99,11 @@ query GetGallery($slug: String) {
       title
       images {
         id
-        gatsbyImageData
-        fluid(resizingBehavior: CROP) {
-          src
-          aspectRatio
-        }
+        gatsbyImageData(
+        
+         placeholder: BLURRED
+        )
+       
       }
       description {
         internal {
@@ -60,4 +114,4 @@ query GetGallery($slug: String) {
   }
 `
 
-export default galleryTemplate
+export default GalleryTemplate
