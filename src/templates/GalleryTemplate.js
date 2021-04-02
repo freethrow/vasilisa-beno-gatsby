@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/Layout'
-import {Link} from 'gatsby'
+
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Lightbox from 'react-image-lightbox';
@@ -32,10 +32,13 @@ const GalleryTemplate = ({ data:{
     return (
     <Layout>
         <section 
-        className="container mx-auto text-gray-500 font-thin">
+        className="text-gray-500 font-thin">
       
-        <h1>{title}</h1>
+        <h1
+          className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right"
+        >{title}</h1>
         <div className="my-12">{description.internal.content}</div>
+        <div className="divider my-6"></div>
 
     { isOpen &&      
     <Lightbox
@@ -43,6 +46,7 @@ const GalleryTemplate = ({ data:{
         nextSrc={pics[(index + 1) % pics.length]}
         prevSrc={pics[(index + pics.length - 1) % pics.length]}
         onCloseRequest={() => setOpen(false)}
+        
         onMovePrevRequest={() =>
           setIndex((index + pics.length - 1) % pics.length)
         }
@@ -54,7 +58,7 @@ const GalleryTemplate = ({ data:{
 
 
 
-        <div className="md:grid md:grid-cols-3 md:gap-12 mx-auto text-center">
+        <div className="md:grid lg:grid-cols-3 md:gap-12 text-center md:grid-cols-2">
         {images.map((image, index)=>{
             
        
@@ -63,16 +67,17 @@ const GalleryTemplate = ({ data:{
               return (
                   <div 
                     key={image.id}
-                    className="flex flex-col items-center justify-start ">
+                    className="flex flex-col 
+                     my-4 items-center justify-start p-2 bg-white max-w-sm
+        
+                    border-gray-200 border-solid border-t-2 border-l-2 border-r-2 transition duration-500 transform hover:scale-105">
                         <GatsbyImage
                             onClick={() => {
                               setOpen(true)
                               setIndex(index)
                             }}
                             image={image.gatsbyImageData}
-                            className="transition duration-500 transform hover:scale-105 
-                            
-                             border-solid border-8"
+                            className="cursor-pointer"
                             
                             
                         />
@@ -82,6 +87,7 @@ const GalleryTemplate = ({ data:{
               )
           })}
         </div>
+        <div className="divider my-6"></div>
         </section>
     </Layout>)
 }

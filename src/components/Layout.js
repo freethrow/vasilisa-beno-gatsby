@@ -11,7 +11,7 @@ const Layout = (props) => {
   
     
     return (
-        <div className="container mx-auto max-w-7xl min-h-screen flex flex-col justify-items-stretch">
+        <div className="container mx-auto px-10 max-w-6xl min-h-screen flex flex-col justify-items-stretch">
             <Header/>
 
            

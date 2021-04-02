@@ -35,6 +35,7 @@ const galleries = ({data}) => {
                         className="p-8"
                          />
                     </Link>
+                    
                      <p>{gallery.description.internal.content}</p>
                   </div>
               )

@@ -6,6 +6,7 @@ const about = () => {
 
         <Layout>
           <h1>About Page</h1>
+          GARABA
         </Layout>
         
       )

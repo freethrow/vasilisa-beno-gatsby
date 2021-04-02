@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         // Configure your color palette here
-        themeOrange:'#56898D',
+        themeOrange:'#AB1C0C',
       }
     },  
      

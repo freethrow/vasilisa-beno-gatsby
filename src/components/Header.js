@@ -5,13 +5,23 @@ import {Link} from 'gatsby'
 
 function Header() {
     return (
-        <div className="flex flex-row justify-between w-full py-8">
-            <Link to="/"><h1 className="text-themeOrange">Vasilisa Beno Photography</h1></Link>
+        <div className="flex flex-col justify-center w-full py-8 text-center md:flex-row md:justify-between">
+            <Link to="/"><h1 className="mb-10 text-xl md:text-base flex flex-row justify-between">
+                
+            <span className="opacity-50">Vasilisa Beno</span> 
+            
+            <span className="text-themeOrange">Rust Art</span>
+            
+            </h1></Link>
             <nav>
-                <ul className="list-none flex flex-row justify-between">
-                    <li className="mx-2.5"><Link to="/">Home</Link></li>
-                    <li className="mx-2.5"><Link to="/galleries">Galleries</Link></li>
-                    <li className="mx-2.5"><Link to="/about">About</Link></li>
+                <ul className="list-none flex flex-row justify-between text-sm">
+                    <li className="md:mx-2.5 transition duration-700 hover:text-themeOrange transform
+                     hover:scale-110 
+                    "><Link to="/">Home</Link></li>
+                    <li className="md:mx-2.5 transition duration-700 hover:text-themeOrange transform
+                     hover:scale-110"><Link to="/galleries">Galleries</Link></li>
+                    <li className="md:mx-2.5 transition duration-700 hover:text-themeOrange transform
+                     hover:scale-110"><Link to="/about">About</Link></li>
                 </ul>
             </nav>
         </div>
