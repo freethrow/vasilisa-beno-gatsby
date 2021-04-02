@@ -6,7 +6,8 @@ const about = () => {
 
         <Layout>
           <h1>About Page</h1>
-          GARABA
+          <p> Some text </p>
+          <p>Instagram, Fejs, loodilo</p>
         </Layout>
         
       )

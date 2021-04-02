@@ -8,9 +8,9 @@ function Header() {
         <div className="flex flex-col justify-center w-full py-8 text-center md:flex-row md:justify-between">
             <Link to="/"><h1 className="mb-10 text-xl md:text-base flex flex-row justify-between">
                 
-            <span className="opacity-50">Vasilisa Beno</span> 
+            <span className="opacity-80 mt-8 z-10 px-1">Vasilisa Beno</span> 
             
-            <span className="text-themeOrange">Rust Art</span>
+            <span className="text-themeOrange opacity-20 font-extrabold text-7xl absolute z-0 p-0">Rust Art</span>
             
             </h1></Link>
             <nav>

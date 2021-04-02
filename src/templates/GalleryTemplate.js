@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from '../components/Layout'
 
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -11,6 +11,7 @@ import 'react-image-lightbox/style.css';
 const GalleryTemplate = ({ data:{
     gallery:{
         title,
+        slug,
         description,
         images
     }
@@ -34,9 +35,11 @@ const GalleryTemplate = ({ data:{
         <section 
         className="text-gray-500 font-thin">
       
+      <Link to={`/galleries/${slug}`}>
         <h1
           className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right"
         >{title}</h1>
+      </Link>
         <div className="my-12">{description.internal.content}</div>
         <div className="divider my-6"></div>
 
@@ -69,18 +72,22 @@ const GalleryTemplate = ({ data:{
                     key={image.id}
                     className="flex flex-col 
                      my-4 items-center justify-start p-2 bg-white max-w-sm
-        
-                    border-gray-200 border-solid border-t-2 border-l-2 border-r-2 transition duration-500 transform hover:scale-105">
+                   
+                    transition duration-500 transform hover:scale-105"
+            
+                    >
+                      <div className="border-gray-200 border-solid  border-2 p-2">
                         <GatsbyImage
                             onClick={() => {
                               setOpen(true)
                               setIndex(index)
                             }}
                             image={image.gatsbyImageData}
-                            className="cursor-pointer"
+                            className="cursor-pointer "
                             
                             
                         />
+                        </div>
 
                        
                   </div>
@@ -98,6 +105,7 @@ query GetGallery($slug: String) {
     gallery:contentfulGallery(slug: {eq: $slug}, images: {}) {
       id
       title
+      slug
       images {
         id
         gatsbyImageData(

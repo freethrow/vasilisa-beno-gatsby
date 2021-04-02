@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from '../components/Layout'
 
-import {graphql, useStaticQuery} from 'gatsby'
+import {graphql, Link, useStaticQuery} from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
 
 import { convertToBgImage } from 'gbimage-bridge';
@@ -37,16 +37,16 @@ const {bgImage1} = useStaticQuery(
 
     <Layout>
     
-      
+      <Link to="/galleries">
       <BackgroundImage
         Tag="section"
         className="homeSection flex flex-col justify-center items-center"
         {...bgImage}
         preserveStackingContext
       >
-     <h1 className="text-white shadow-2xl text-6xl">Rust Art</h1>
+     <h1 className="text-white shadow-2xl text-6xl border-b-2 border-solid">Rust Art</h1>
       </BackgroundImage>
-
+      </Link>
     
     </Layout>
 
