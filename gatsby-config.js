@@ -18,24 +18,7 @@ module.exports = {
   
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
-    {
-      resolve: "gatsby-plugin-seo",
-      options: {
-        siteName: "Vasilisa Beno Rust Art",
-        defaultSiteImage: "/img/logo.png",
-        siteUrl: "https://www.vasilisabeno.site",
-        
-        globalSchema: `{
-            "@type": "WebSite",
-            "@id": "https://www.vasilisabeno.site",
-            "url": "https://www.vasilisabeno.site",
-            "name": "Vasilisa Beno Rust Art",
-            "publisher": {
-              "@id": "https://www.vasilisabeno.site"
-            }
-          }`
-      }
-    },
+   
   {
     resolve: `gatsby-transformer-remark`,
     options: {

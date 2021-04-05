@@ -12,8 +12,7 @@ const AboutPage = ({data}) => {
 
   const Bold = ({ children }) => <span className="boldIt">{children}</span>;
 
-  const Text = ({ children }) => <p className="align-center">{children}</p>;
-  
+ 
   const options = {
     renderMark: {
       [MARKS.BOLD]: text => <Bold>{text}</Bold>

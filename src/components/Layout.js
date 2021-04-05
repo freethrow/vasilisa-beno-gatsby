@@ -1,6 +1,4 @@
 import React from 'react'
-import { SEO, useSEO } from "gatsby-plugin-seo";
-
 
 import Header from './Header'
 import Footer from './Footer'
@@ -8,22 +6,10 @@ import Footer from './Footer'
 
 const Layout = (props) => {
     
-    <SEO
-    title="Vasilisa Beno Digital Art"
-    description="Rust Art Digital Photography"
-    pagePath="/"
-    schema={`{
-          "@context": "http://schema.org",
-          "@type": "WebPage",
-          "mainEntity": {
-            "@type": "Organization",
-            "name": "Vasilisa Beno Rust Art"            
-          }
-        }`}
-  />
+
     
     return (
-        <div className="container mx-auto px-10 max-w-6xl min-h-screen flex flex-col justify-items-stretch">
+        <div className="container mx-auto md:px-10 max-w-6xl min-h-screen flex flex-col justify-items-stretch">
             <Header/>
 
            

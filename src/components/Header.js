@@ -15,12 +15,12 @@ function Header() {
             </h1></Link>
             <nav>
                 <ul className="list-none flex flex-row justify-between text-sm">
-                    <li className="md:mx-2.5 transition duration-700 hover:text-themeOrange transform
+                    <li className="mx-2.5 transition duration-700 hover:text-themeOrange transform
                      hover:scale-110 
                     "><Link to="/">Home</Link></li>
-                    <li className="md:mx-2.5 transition duration-700 hover:text-themeOrange transform
+                    <li className="mx-2.5 transition duration-700 hover:text-themeOrange transform
                      hover:scale-110"><Link to="/galleries">Galleries</Link></li>
-                    <li className="md:mx-2.5 transition duration-700 hover:text-themeOrange transform
+                    <li className="mx-2.5 transition duration-700 hover:text-themeOrange transform
                      hover:scale-110"><Link to="/about">About</Link></li>
                 </ul>
             </nav>
