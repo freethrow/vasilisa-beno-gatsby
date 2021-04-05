@@ -10,6 +10,7 @@ module.exports = {
         spaceId: "nihe1h4kna1o",
       },
     },
+    "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
 
@@ -17,6 +18,24 @@ module.exports = {
   
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-seo",
+      options: {
+        siteName: "Vasilisa Beno Rust Art",
+        defaultSiteImage: "/img/logo.png",
+        siteUrl: "https://www.vasilisabeno.site",
+        
+        globalSchema: `{
+            "@type": "WebSite",
+            "@id": "https://www.vasilisabeno.site",
+            "url": "https://www.vasilisabeno.site",
+            "name": "Vasilisa Beno Rust Art",
+            "publisher": {
+              "@id": "https://www.vasilisabeno.site"
+            }
+          }`
+      }
+    },
   {
     resolve: `gatsby-transformer-remark`,
     options: {

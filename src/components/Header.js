@@ -10,7 +10,7 @@ function Header() {
                 
             <span className="opacity-80 mt-8 z-10 px-1">Vasilisa Beno</span> 
             
-            <span className="text-themeOrange opacity-20 font-extrabold text-7xl absolute z-0 p-0">Rust Art</span>
+            <span className="text-themeOrange opacity-20 font-extrabold text-7xl absolute z-0 p-0 transition duration-700 hover:opacity-60">Rust Art</span>
             
             </h1></Link>
             <nav>

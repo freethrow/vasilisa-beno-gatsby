@@ -45,6 +45,7 @@ const {bgImage1} = useStaticQuery(
         preserveStackingContext
       >
      <h1 className="text-white shadow-2xl text-6xl border-b-2 border-solid">Rust Art</h1>
+     <p className="text-white tracking-wider font-thin transition transform hover:rotate-3">if rust could speak, these are the tales we would hear</p>
       </BackgroundImage>
       </Link>
     
