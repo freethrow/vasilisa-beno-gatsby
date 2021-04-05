@@ -25,7 +25,6 @@ const AboutPage = ({data}) => {
    
     const aboutText = data.about.edges[0].node.aboutText
 
-    console.table(aboutText, options)
     return (
 
         <Layout>
