@@ -29,7 +29,6 @@ const {bgImage1} = useStaticQuery(
   `
   )
 
-  console.log("IMAGE",bgImage1.edges[0].node.backgroundImage)
   
   const image = getImage(bgImage1.edges[0].node.backgroundImage)
   const bgImage = convertToBgImage(image)

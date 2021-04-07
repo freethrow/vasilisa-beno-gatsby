@@ -11,9 +11,9 @@ function Footer() {
         justify-between align-middle w-full text-gray-300">
             <div className="flex flex-row justify-evenly">
 
-                <FontAwesomeIcon icon={faFacebook} size="2x" className=" mr-3" />
-                <FontAwesomeIcon icon={faInstagram} size="2x" className="mr-3" />
-                <FontAwesomeIcon icon={faMailBulk} size="2x" className="mr-3" />
+                <FontAwesomeIcon icon={faFacebook} size="2x" className=" mr-3" to="https://www.facebook.com/vasilisa.beno" />
+                <a href="https://www.instagram.com/vasilisa_b31/"><FontAwesomeIcon icon={faInstagram} size="2x" className="mr-3" /></a>
+                <a href="mailto:vasilisabeno@gmail.com"><FontAwesomeIcon icon={faMailBulk} size="2x" className="mr-3" /></a>
             </div>
                 <div className="mt-1 flex my-8 flex-1 flex-col justify-items-center items-center">
                     Copyright Vasilisa Beno 2021

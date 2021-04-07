@@ -42,11 +42,11 @@ const GalleryTemplate = ({ data:{
       
       <Link to={`/galleries/${slug}`}>
         <h1
-          className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right"
+          className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right mr-2"
         >{title}</h1>
       </Link>
-        <div className="my-12">{description.internal.content}</div>
-        <div className="divider my-6"></div>
+        <div className="my-12 text-center">{description.internal.content}</div>
+        <div className="divider my-6 px-6 mx-auto"></div>
 
     { isOpen &&      
     <Lightbox
@@ -100,7 +100,7 @@ const GalleryTemplate = ({ data:{
               )
           })}
         </div>
-        <div className="divider my-6"></div>
+
         </section>
     </Layout>)
 }

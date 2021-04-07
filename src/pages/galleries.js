@@ -1,8 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import {Link, graphql} from 'gatsby'
 import SEO from '../components/SEO'
+import { convertToBgImage } from 'gbimage-bridge';
+import BackgroundImage from 'gatsby-background-image'
 
 
 const galleries = ({data}) => {
@@ -19,10 +21,13 @@ const galleries = ({data}) => {
       />
           <Link to={'/galleries'}>
         <h1
-          className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right"
+          className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right mr-2"
         >Galleries</h1>
       </Link>
-      <div className="my-12 text-gray-500 font-thin mx-2.5 md:mx-0">Galleries are just a way of grouping stuff together.</div>
+      <div className="my-12 text-gray-500 font-thin mx-2.5 text-sm md:mx-0">
+        The images are open to interpretationa and they are grouped in galleries just for convinience. 
+        There is no real order or hierarchy.
+      </div>
         <div className="divider my-6"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
          
@@ -30,27 +35,25 @@ const galleries = ({data}) => {
           {galleries.map((gallery)=>{
               // get cover image
               const image = getImage(gallery.cover.gatsbyImageData)
+              const bgImage = convertToBgImage(image)
 
               return (
-                  <div 
-                    key={gallery.id}
-                    className="mx-auto text-center  w-full
-                    flex flex-col justify-start items-start border-solid border-2 border-black
-                    
-                    ">
-                    <h2
-                        className="text-red-800 hover:text-red-600 opacity-50 my-6 "
-                    ><Link to={`/galleries/${gallery.slug}`}>{gallery.title}</Link></h2>
-                   
-                   <Link to={`/galleries/${gallery.slug}`}>
-                    <GatsbyImage
-                        image={image}
-                        alt={`${gallery.title}`}
-                    />
-                    </Link>
-                    
-                     <p className="text-gray-400">{gallery.description.internal.content}</p>
+                <Link to={`/galleries/${gallery.slug}`}>
+                  <div className="galleryCOntainer p-4 self-center self-center" key={gallery.id}>
+                    <BackgroundImage
+                      Tag="section"
+                      className="homeSection flex flex-col justify-center items-center overflow-hidden transition duration-500 transform hover:scale-105"
+                      {...bgImage}
+                      preserveStackingContext
+                    >
+                      <h2
+                        className=" text-white shadow-2xl-700 p-4 border-white border-solid border-2 font-thin text-2xl transition duration-500 transform hover:scale-105"
+                    >{gallery.title}</h2>
+            
+                    </BackgroundImage>
                   </div>
+                  </Link>
+                  
               )
           })}
       
