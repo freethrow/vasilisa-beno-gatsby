@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {Link, graphql} from 'gatsby'
+import SEO from '../components/SEO'
 
 
 const galleries = ({data}) => {
@@ -13,6 +14,9 @@ const galleries = ({data}) => {
     return (
 
         <Layout>
+                <SEO 
+        title="Vasilisa Beno Rust Art Galleries"
+      />
           <Link to={'/galleries'}>
         <h1
           className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right"
@@ -31,7 +35,7 @@ const galleries = ({data}) => {
                   <div 
                     key={gallery.id}
                     className="mx-auto text-center  w-full
-                    flex flex-col justify-start items-start
+                    flex flex-col justify-start items-start border-solid border-2 border-black
                     
                     ">
                     <h2
@@ -41,6 +45,7 @@ const galleries = ({data}) => {
                    <Link to={`/galleries/${gallery.slug}`}>
                     <GatsbyImage
                         image={image}
+                        alt={`${gallery.title}`}
                     />
                     </Link>
                     
@@ -61,7 +66,7 @@ export const query = graphql`
           priority
           slug
           cover {
-            gatsbyImageData(height: 600)
+            gatsbyImageData(height:300)
           }
           title
           

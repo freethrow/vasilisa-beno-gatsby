@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 import {graphql, Link, useStaticQuery} from 'gatsby'
 import { getImage } from "gatsby-plugin-image"
@@ -37,6 +38,10 @@ const {bgImage1} = useStaticQuery(
 
     <Layout>
     
+      <SEO 
+        title="Vasilisa Beno Rust Art"
+        description="Abstract Digital Art Rust Vasilisa Beno"
+      />
       <Link to="/galleries">
       <BackgroundImage
         Tag="section"

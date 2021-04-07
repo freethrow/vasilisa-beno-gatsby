@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import {graphql, Link} from 'gatsby'
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { MARKS } from "@contentful/rich-text-types"
@@ -28,6 +29,10 @@ const AboutPage = ({data}) => {
     return (
 
         <Layout>
+                <SEO 
+        title="Vasilisa Beno Rust Art - About"
+        description="Abstract Digital Art Rust Vasilisa Beno"
+      />
            <Link to={'/about'}>
         <h1
           className=" text-themeOrange opacity-20 font-extrabold text-7xl text-right"

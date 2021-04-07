@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { graphql, Link } from "gatsby"
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -32,6 +33,10 @@ const GalleryTemplate = ({ data:{
 
     return (
     <Layout>
+      <SEO 
+        title={`${title} gallery - Rust Art Vasilisa Beno`}
+        description={`Abstract Digital Art Rust Vasilisa Beno Gallery theme ${title}`}
+      />
         <section 
         className="text-gray-500 font-thin">
       
@@ -83,6 +88,7 @@ const GalleryTemplate = ({ data:{
                               setIndex(index)
                             }}
                             image={image.gatsbyImageData}
+                            alt="Vasilisa Beno Abstract Art Rust"
                             className="cursor-pointer "
                             
                             
