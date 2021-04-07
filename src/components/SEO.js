@@ -5,6 +5,9 @@ const SEO = ({title, description}) => {
     return (
         <Helmet 
             title={title}
+            htmlAttributes={{
+                lang: 'en',
+              }}
             meta={[
                 {
                     name:`description`,
